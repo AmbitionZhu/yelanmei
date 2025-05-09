@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>野生蓝莓产量预测</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #eee;
+        }
+        .form-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #333;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        .form-group button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>野生蓝莓产量预测</h1>
+    </div>
+    <div class="form-container">
+        <p>在此处输入数据</p>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="AverageRainingDays">平均降雨天数</label>
+                <input type="text" id="AverageRainingDays" name="AverageRainingDays" placeholder="输入平均降雨天数">
+            </div>
+            <!-- 关键修改：克隆大小 → 蓝莓克隆株的平均占地面积大小 -->
+            <div class="form-group">
+                <label for="clonesize">蓝莓克隆株的平均占地面积大小</label>
+                <input type="text" id="clonesize" name="clonesize" placeholder="输入蓝莓克隆株的平均占地面积大小">
+            </div>
+            <div class="form-group">
+                <label for="AverageOfLowerTRange">最低温平均值</label>
+                <input type="text" id="AverageOfLowerTRange" name="AverageOfLowerTRange" placeholder="输入最低温平均值">
+            </div>
+            <div class="form-group">
+                <label for="AverageOfUpperTRange">最高温平均值</label>
+                <input type="text" id="AverageOfUpperTRange" name="AverageOfUpperTRange" placeholder="输入最高温平均值">
+            </div>
+            <div class="form-group">
+                <label for="honeybee">蜜蜂数量</label>
+                <input type="text" id="honeybee" name="honeybee" placeholder="输入蜜蜂数量">
+            </div>
+            <div class="form-group">
+                <label for="osmia">壁蜂数量</label>
+                <input type="text" id="osmia" name="osmia" placeholder="输入壁蜂数量">
+            </div>
+            <div class="form-group">
+                <label for="bumbles">熊蜂数量</label>
+                <input type="text" id="bumbles" name="bumbles" placeholder="输入熊蜂数量">
+            </div>
+            <div class="form-group">
+                <label for="andrena">地蜂数量</label>
+                <input type="text" id="andrena" name="andrena" placeholder="输入地蜂数量">
+            </div>
+            <div class="form-group">
+                <button type="submit">提交</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
